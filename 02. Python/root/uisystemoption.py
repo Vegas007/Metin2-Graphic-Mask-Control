@@ -34,7 +34,7 @@
 	if app.ENABLE_GRAPHIC_MASK:
 		def __RefreshGraphicMask(self):
 			for (tabKey, tabButton) in enumerate(self.graphicMaskButtonList):
-				''' {True: lambda: tabButton.SetUp(), False: lambda: tabButton.Down()}.get(bool(systemSetting.GetGraphicMaskPart(tabKey)))() '''
+				''' {True: lambda: tabButton.Down(), False: lambda: tabButton.SetUp()}.get(bool(systemSetting.GetGraphicMaskPart(tabKey)))() '''
 				
 				if systemSetting.GetGraphicMaskPart(tabKey):
 					tabButton.Down()

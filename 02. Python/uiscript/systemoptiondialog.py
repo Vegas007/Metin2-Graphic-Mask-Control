@@ -1,7 +1,12 @@
+#1.1 Search for:
+import uiScriptLocale
+#1.2 Add after:
+import app
+
 # Go at end of file and add:
 if app.ENABLE_GRAPHIC_MASK:
-	window['height'] += 10
-	window['children'][0]['height'] += 10
+	window['height'] += 20
+	window['children'][0]['height'] += 20
 	window['children'][0]['children'] += ( \
 		{
 			"name" : "background_text",
