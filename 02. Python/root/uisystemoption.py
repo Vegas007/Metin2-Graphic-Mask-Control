@@ -9,7 +9,7 @@
 #1.2 Add after:
 			if app.ENABLE_GRAPHIC_MASK:
 				for graphicMaskName in ('terrain', 'object', 'cloud', 'water', 'tree'):
-					self.graphicMaskButtonList.append(eval("GetObject('background_{name}')".format(name = graphicMaskName)))
+					self.graphicMaskButtonList.append(GetObject('background_{:s}'.format(graphicMaskName)))
 			
 #1.3 Search for:
 		self.ctrlShadowQuality = 0
@@ -34,8 +34,6 @@
 	if app.ENABLE_GRAPHIC_MASK:
 		def __RefreshGraphicMask(self):
 			for (tabKey, tabButton) in enumerate(self.graphicMaskButtonList):
-				''' {True: lambda: tabButton.Down(), False: lambda: tabButton.SetUp()}.get(bool(systemSetting.GetGraphicMaskPart(tabKey)))() '''
-				
 				if systemSetting.GetGraphicMaskPart(tabKey):
 					tabButton.Down()
 				else:
